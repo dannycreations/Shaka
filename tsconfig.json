@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.base.json",
+	"references": [
+		{
+			"path": "./packages/logger"
+		},
+		{
+			"path": "./packages/mikro-orm"
+		},
+		{
+			"path": "./packages/shaka"
+		},
+		{
+			"path": "./packages/utilities"
+		}
+	]
+}
