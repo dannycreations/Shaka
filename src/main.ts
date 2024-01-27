@@ -1,9 +1,11 @@
 import 'dotenv/config'
 
-import { logger } from '@dnycts/logger'
-import { container } from '@dnycts/shaka'
+import { container } from '@shaka/core'
+import { logger } from '@shaka/logger'
 
 async function bootstrap() {
 	container.logger = logger()
+
+	container.logger.info('Hello, World!')
 }
 bootstrap()

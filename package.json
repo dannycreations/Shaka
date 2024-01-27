@@ -1,5 +1,5 @@
 {
-	"name": "@dnycts/example",
+	"name": "example",
 	"version": "0.0.1",
 	"description": "",
 	"main": "dist/main.js",
@@ -9,13 +9,17 @@
 	"private": true,
 	"scripts": {
 		"build": "rm -rf dist && tsc",
-		"build:all": "npm run build -w --if-present",
+		"build:all": "npm run build --workspaces --if-present && npm run build",
 		"start:pm2": "pm2 start . --stop-exit-codes 0",
 		"start:dev": "npm run build && tsc-watch --onSuccess \"node .\"",
-		"update:dep": "npx npm-check-updates -u -x got,chalk,@types/node"
+		"update:dep": "npx npm-check-updates -u -x got,chalk,@types/node",
+		"update:dep:all": "npm run update:dep --workspaces --if-present && npm run update:dep"
 	},
 	"workspaces": [
-		"packages/*"
+		"packages/logger",
+		"packages/core",
+		"packages/mikro-orm",
+		"packages/utilities"
 	],
 	"repository": "github:dannycreations/Shaka",
 	"homepage": "https://github.com/dannycreations/Shaka#readme",

@@ -1,5 +1,5 @@
 {
-	"name": "@dnycts/utilities",
+	"name": "@shaka/utilities",
 	"version": "0.0.1",
 	"description": "",
 	"main": "dist/main.js",
@@ -8,8 +8,11 @@
 	"license": "GPL-3.0",
 	"private": true,
 	"scripts": {
-		"build": "rm -rf dist tsconfig.tsbuildinfo && tsc"
+		"build": "rm -rf dist tsconfig.tsbuildinfo && tsc",
+		"update:dep": "npx npm-check-updates -u -x nanoid"
 	},
+	"repository": "github:dannycreations/Shaka",
+	"homepage": "https://github.com/dannycreations/Shaka#readme",
 	"dependencies": {
 		"jsonc-parser": "^3.2.1",
 		"nanoid": "3.3.7"

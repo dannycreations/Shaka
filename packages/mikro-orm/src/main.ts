@@ -1,5 +1,5 @@
-import { container } from '@dnycts/shaka'
 import { EntityManager, Options, MikroORM as _orm } from '@mikro-orm/core'
+import { container } from '@shaka/core'
 
 export * from './config/better-sqlite.config'
 

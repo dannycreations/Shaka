@@ -1,6 +1,6 @@
-import { logger } from '@dnycts/logger'
 import { Store, StoreRegistry, container } from '@sapphire/pieces'
 import { Result } from '@sapphire/result'
+import { logger } from '@shaka/logger'
 import { EventEmitter } from 'node:events'
 import { Logger } from 'pino'
 import { ListenerStore } from './structures/ListenerStore'

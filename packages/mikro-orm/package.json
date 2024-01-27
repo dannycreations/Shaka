@@ -1,5 +1,5 @@
 {
-	"name": "@dnycts/mikro-orm",
+	"name": "@shaka/mikro-orm",
 	"version": "0.0.1",
 	"description": "",
 	"main": "dist/main.js",
@@ -8,8 +8,11 @@
 	"license": "GPL-3.0",
 	"private": true,
 	"scripts": {
-		"build": "rm -rf dist tsconfig.tsbuildinfo && tsc"
+		"build": "rm -rf dist tsconfig.tsbuildinfo && tsc",
+		"update:dep": "npx npm-check-updates -u"
 	},
+	"repository": "github:dannycreations/Shaka",
+	"homepage": "https://github.com/dannycreations/Shaka#readme",
 	"dependencies": {
 		"@mikro-orm/core": "^6.0.5",
 		"@mikro-orm/better-sqlite": "^6.0.5",
