@@ -1,23 +1,22 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@tsconfig/node16/tsconfig.json",
+	"ts-node": {
+		"transpileOnly": true
+	},
 	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2017",
-		"outDir": "./dist",
-		"baseUrl": "./",
+		"composite": true,
 		"sourceMap": true,
 		"declaration": true,
+		"declarationMap": true,
 		"removeComments": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
-		"incremental": true,
-		"skipLibCheck": true,
 		"noImplicitAny": false,
 		"strictNullChecks": false,
 		"strictBindCallApply": false,
-		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": false,
-		"esModuleInterop": true
+		"noFallthroughCasesInSwitch": false
 	},
-	"include": ["./src"]
+	"include": ["src"]
 }

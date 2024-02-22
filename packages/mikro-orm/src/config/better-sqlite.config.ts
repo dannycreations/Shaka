@@ -3,7 +3,7 @@ import { TsMorphMetadataProvider } from '@mikro-orm/reflection'
 import { SqlHighlighter } from '@mikro-orm/sql-highlighter'
 import { join } from 'path'
 
-export function configBetterSqlite(options: Options = {}) {
+export function configBetterSqlite(options: Options = {}): Options {
 	return {
 		driver: BetterSqliteDriver,
 		dbName: 'sqlite.db',

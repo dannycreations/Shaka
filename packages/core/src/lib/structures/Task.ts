@@ -3,7 +3,10 @@ import { Result } from '@sapphire/result'
 
 export abstract class Task<Options extends Task.Options = Task.Options> extends Piece<Options, 'tasks'> {
 	public constructor(context: Task.LoaderContext, options: Options = {} as Options) {
-		super(context, { ...options, name: (options.name ?? context.name).toUpperCase() })
+		super(context, {
+			...options,
+			name: (options.name ?? context.name).toUpperCase(),
+		})
 
 		this.setDelay(options.delay)
 	}

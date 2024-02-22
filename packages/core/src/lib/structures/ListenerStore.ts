@@ -4,6 +4,9 @@ import { ListenerLoaderStrategy } from './ListenerLoaderStrategy'
 
 export class ListenerStore extends Store<Listener, 'listeners'> {
 	public constructor() {
-		super(Listener, { name: 'listeners', strategy: new ListenerLoaderStrategy() })
+		super(Listener, {
+			name: 'listeners',
+			strategy: new ListenerLoaderStrategy(),
+		})
 	}
 }

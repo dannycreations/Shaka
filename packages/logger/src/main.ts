@@ -1,23 +1,27 @@
 import { Moment, tz } from 'moment-timezone'
-import pino, { Level, StreamEntry } from 'pino'
-import PinoPretty from 'pino-pretty'
+import _pino, { Level, StreamEntry } from 'pino'
+import _PinoPretty from 'pino-pretty'
+
+export * from 'pino'
+export const pino = _pino
+export const PinoPretty = _PinoPretty
 
 export function logger(level?: Level) {
 	level ||= process.env.NODE_ENV === 'development' ? 'debug' : 'info'
 	const streams: StreamEntry[] = [
 		{
 			level: 'warn',
-			stream: pino.destination({
+			stream: _pino.destination({
 				mkdir: true,
 				dest: `${process.cwd()}/logs/errors.log`,
 			}),
 		},
 		{
 			level,
-			stream: PinoPretty({
+			stream: _PinoPretty({
 				sync: true,
 				colorize: true,
-				singleLine: true,
+				singleLine: process.env.NODE_ENV === 'production',
 				customPrettifiers: {
 					time: () => `[${getTimezoneDate().format('HH:mm:ss')}]`,
 				},
@@ -25,13 +29,13 @@ export function logger(level?: Level) {
 		},
 	]
 
-	return pino(
+	return _pino(
 		{
 			level,
 			base: undefined,
 			nestedKey: 'payload',
 		},
-		pino.multistream(streams),
+		_pino.multistream(streams),
 	)
 }
 
